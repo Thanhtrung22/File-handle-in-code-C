@@ -24,9 +24,10 @@ int main() {
     char buffer[1024];
     size_t bytes;
     while ((bytes = fread(buffer, 1, sizeof(buffer), input_file)) > 0) {
+        //printf("\nbyte = %lld", bytes);
         fwrite(buffer, 1, bytes, output_file);
     }
-
+    
     // Đóng các tệp
     fclose(input_file);
     fclose(output_file);
@@ -37,7 +38,7 @@ int main() {
     size_t t = fread(a, sizeof(char), sizeof(a), output_file);
     for(unsigned i = 0; i < t; i++)
     {
-        printf("%c ", a[i]);
+        printf("%c", a[i]);
     }
     return 0;
 }
